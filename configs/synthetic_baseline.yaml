@@ -1,0 +1,58 @@
+experiment:
+  name: synthetic_baseline
+  random_seed: 20260503
+
+dataset:
+  total_claims: 1200
+  calibration_fraction: 0.25
+  test_fraction: 0.25
+
+claim_distribution:
+  low: 0.20
+  medium: 0.50
+  high: 0.20
+  mandatory: 0.10
+
+calibration:
+  methods: [raw, temperature_scaling, platt_scaling, isotonic_regression]
+  ece_bins: 10
+
+thresholds:
+  grid_min: 0.50
+  grid_max: 0.99
+  grid_step: 0.01
+  minimum_accepted_accuracy:
+    low: 0.90
+    medium: 0.93
+    high: 0.93
+  minimum_thresholds:
+    low: 0.90
+    medium: 0.91
+    high: 0.92
+
+cost_model:
+  low:
+    wrong_cost: 400
+    review_cost: 150
+  medium:
+    wrong_cost: 800
+    review_cost: 250
+  high:
+    wrong_cost: 1200
+    review_cost: 350
+  mandatory:
+    wrong_cost: 2000
+    review_cost: 350
+
+bootstrap:
+  resamples: 250
+  random_seed: 20260504
+
+monitoring:
+  ece_target: 0.05
+  mce_target: 0.10
+  brier_target: 0.07
+  nll_target: 0.25
+  accepted_accuracy_floor: 0.95
+  override_rate_ceiling: 0.15
+  subgroup_ece_gap: 0.05

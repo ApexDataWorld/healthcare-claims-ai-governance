@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthcare-claims-ai-governance"
+version = "0.1.0"
+description = "Reproducible calibration and governance package for LLM-assisted healthcare insurance claims decision support."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+authors = [{name = "Saurabh Gupta"}]
+dependencies = [
+  "matplotlib>=3.7",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

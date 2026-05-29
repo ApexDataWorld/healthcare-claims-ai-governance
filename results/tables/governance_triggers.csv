@@ -1,0 +1,9 @@
+metric,observed,threshold,triggered,recommended_action
+aggregate_ece,0.01883138086653926,0.05,False,Continue routine monitoring.
+aggregate_mce,0.07706659652741876,0.1,False,Continue routine monitoring.
+aggregate_brier,0.05135927528235619,0.07,False,Continue routine monitoring.
+aggregate_nll,0.21409020857497202,0.25,False,Continue routine monitoring.
+low_accepted_accuracy,0.9433962264150944,0.95,True,Raise tier threshold; audit accepted cases.
+medium_accepted_accuracy,0.9440559440559441,0.95,True,Raise tier threshold; audit accepted cases.
+high_accepted_accuracy,0.9523809523809523,0.95,False,Continue routine monitoring.
+max_subgroup_ece_gap,0.06946212831701157,0.05,True,Open equity review and assess subgroup-specific thresholds.
