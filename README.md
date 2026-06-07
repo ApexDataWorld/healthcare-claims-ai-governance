@@ -1,16 +1,14 @@
-# Calibration-Aware LLM Decision Support for Healthcare Insurance Claims Processing
+# Aggregate Calibration Is Not Enough: Subgroup Monitoring and Pre-Registered Governance Triggers for LLM-Style Decision Support in Healthcare Claims
 
 [![CI](https://github.com/ApexDataWorld/healthcare-claims-ai-governance/actions/workflows/ci.yml/badge.svg)](https://github.com/ApexDataWorld/healthcare-claims-ai-governance/actions/workflows/ci.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-This repository is a reproducible research package for the manuscript:
+This repository contains the reproducible artifact package for the manuscript **"Aggregate Calibration Is Not Enough: Subgroup Monitoring and Pre-Registered Governance Triggers for LLM-Style Decision Support in Healthcare Claims."** The project implements a synthetic, deterministic healthcare-claims decision-support experiment evaluating post-hoc probability calibration, risk-tiered expected-loss thresholding, subgroup calibration monitoring, and pre-registered governance triggers. The goal is to show how aggregate calibration can pass while tier-level accepted accuracy and subgroup calibration checks still surface operational governance risks.
 
-**Calibration-Aware Large Language Model Decision Support for Healthcare Insurance Claims Processing: Uncertainty Quantification, Risk-Tiered Escalation, and Human Oversight**
+## Important Scope Boundary
 
-It implements a focused healthcare informatics decision-support framework for synthetic healthcare insurance claims. The package converts raw model confidence into calibrated probabilities, risk-tiered escalation decisions, expected-loss thresholds, bootstrap confidence intervals, subgroup calibration checks, and governance monitoring triggers.
-
-The repository is intentionally scoped to claims decision support and reproducible evaluation, with production infrastructure topics kept outside the manuscript package.
+This repository uses a deterministic synthetic healthcare-claims cohort. It does not contain protected health information, production payer data, clinical data, member records, or proprietary claims data. The empirical results validate the reproducible calibration, subgroup monitoring, thresholding, and governance-trigger workflow under controlled synthetic assumptions. They should not be interpreted as production payer validation, clinical validation, or deployment evidence.
 
 ## One-Command Reproduction
 
@@ -41,17 +39,14 @@ results/tables/          Publication-ready CSV tables
 results/figures/         Publication-ready PNG figures
 ```
 
-## Methods Implemented
+## Core Contributions
 
-- Synthetic healthcare insurance claims generator for 1,200 claims
-- Calibration methods: raw confidence, temperature scaling, Platt scaling, isotonic regression
-- Metrics: accuracy, ECE, MCE, Brier score, negative log-likelihood
-- Risk-tiered abstention and human escalation
-- Expected-loss threshold optimization
-- Bootstrap confidence intervals
-- Subgroup calibration and equity monitoring
-- Governance monitoring triggers
-- Publication-ready tables and figures
+- Compares raw confidence, temperature scaling, Platt scaling, and isotonic regression on a held-out synthetic claims test split.
+- Reports calibration metrics including expected calibration error, maximum calibration error, Brier score, and negative log-likelihood.
+- Selects risk-tiered thresholds using expected-loss optimization under accepted-accuracy floors.
+- Computes subgroup expected calibration error across claim type, policy category, provider type, and member group strata.
+- Produces pre-registered governance triggers that map statistical signals to recommended human-review actions.
+- Provides reproducible scripts, generated tables, generated figures, and verification checks.
 
 ## Key Outputs
 
@@ -74,3 +69,21 @@ After reproduction, inspect:
 This package is for synthetic validation and reproducible methods development. It is not a production claims adjudication system and does not process protected health information. Real-world use would require approved de-identified data, label-quality assessment with trained reviewers, prospective validation, compliance review, and ongoing monitoring.
 
 See [docs/GOVERNANCE.md](docs/GOVERNANCE.md), [docs/MONITORING.md](docs/MONITORING.md), and [docs/DEPLOYMENT_PATHWAY.md](docs/DEPLOYMENT_PATHWAY.md).
+
+## Cite this work
+
+Gupta, S. (2026). *Aggregate Calibration Is Not Enough: Subgroup Monitoring and Pre-Registered Governance Triggers for LLM-Style Decision Support in Healthcare Claims*. Manuscript transferred to and under review at JAMIA Open.
+
+Author note: Master of Statistics, North Carolina State University.
+
+Repository: https://github.com/ApexDataWorld/healthcare-claims-ai-governance
+
+```bibtex
+@misc{gupta2026aggregatecalibration,
+  author = {Gupta, Saurabh},
+  title = {Aggregate Calibration Is Not Enough: Subgroup Monitoring and Pre-Registered Governance Triggers for LLM-Style Decision Support in Healthcare Claims},
+  year = {2026},
+  note = {Manuscript transferred to and under review at JAMIA Open. Author note: Master of Statistics, North Carolina State University.},
+  howpublished = {\url{https://github.com/ApexDataWorld/healthcare-claims-ai-governance}}
+}
+```
