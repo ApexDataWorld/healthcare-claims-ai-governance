@@ -15,9 +15,9 @@ REQUIRED_FILES = [
     "results/tables/subgroup_diagnostics.csv",
     "results/tables/reliability_bins_platt.csv",
     "results/tables/governance_triggers.csv",
-    "results/figures/fig1_reliability_diagram.png",
-    "results/figures/fig2_risk_coverage_curve.png",
-    "results/figures/fig3_subgroup_ece.png",
+    "results/figures/fig1_subgroup_ece.png",
+    "results/figures/fig2_reliability_diagram.png",
+    "results/figures/fig3_risk_coverage_curve.png",
 ]
 
 

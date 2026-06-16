@@ -188,9 +188,9 @@ def run_pipeline(config_path: str | Path = "configs/synthetic_baseline.yaml") ->
     enriched_test_path = tables_dir / "test_predictions.csv"
     test.to_csv(enriched_test_path, index=False)
 
-    reliability_path = figures_dir / "fig1_reliability_diagram.png"
-    coverage_path = figures_dir / "fig2_risk_coverage_curve.png"
-    subgroup_fig_path = figures_dir / "fig3_subgroup_ece.png"
+    subgroup_fig_path = figures_dir / "fig1_subgroup_ece.png"
+    reliability_path = figures_dir / "fig2_reliability_diagram.png"
+    coverage_path = figures_dir / "fig3_risk_coverage_curve.png"
     best_calibration_row = calibration_table.loc[calibration_table["method"] == best_method].iloc[0]
     save_reliability_diagram(
         test["correct"].to_numpy(),
